@@ -1,10 +1,14 @@
 package org.test;
 
 import com.github.vok.framework.VaadinOnKotlin;
+import com.github.vokorm.DBKt;
 import com.github.vokorm.VokOrm;
 
 import org.flywaydb.core.Flyway;
 import org.h2.Driver;
+
+import java.time.Instant;
+import java.time.LocalDate;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -29,6 +33,22 @@ public class Bootstrap implements ServletContextListener {
         final Flyway flyway = new Flyway();
         flyway.setDataSource(VokOrm.INSTANCE.getDataSource());
         flyway.migrate();
+
+        // create some testing data
+        DBKt.db(ctx -> {
+            for (int i = 0; i < 100; i++) {
+                final Person person = new Person();
+                person.setName("Person " + i);
+                person.setAge(i + 10);
+                person.setAlive(i % 2 == 0);
+                person.setCreated(Instant.now());
+                person.setDateOfBirth(LocalDate.of(1990, 1, i % 28 + 1));
+                ctx.getCon().createQuery("insert into Person (name, age, alive, created, dateOfBirth) values (:name, :age, :alive, :created, :dateOfBirth)")
+                        .bind(person)
+                        .executeUpdate();
+            }
+            return null;
+        });
     }
 
     @Override
