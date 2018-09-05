@@ -1,6 +1,8 @@
 Vaadin 8 SQLDataProvider Example
 =================================
 
+[![Build Status](https://travis-ci.org/mvysny/vaadin8-sqldataprovider-example.svg?branch=master)](https://travis-ci.org/mvysny/vaadin8-sqldataprovider-example)
+
 Demonstrates the use of a full-blown SQLDataProvider in a Vaadin 8 Grid.
 
 Only requires a Servlet 3.0 container to run. Developed in a pure Java. Also demoes an auto-generated
