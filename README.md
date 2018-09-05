@@ -1,7 +1,15 @@
-vaadin-app
-==============
+Vaadin 8 SQLDataProvider Example
+=================================
 
-Template for a simple Vaadin application that only requires a Servlet 3.0 container to run.
+Demonstrates the use of a full-blown SQLDataProvider in a Vaadin 8 Grid.
+
+Only requires a Servlet 3.0 container to run. Developed in a pure Java. Also demoes an auto-generated
+Grid filter bar, therefore this example serves as a full replacement for Teppo Kurki's
+[FilteringTable](https://vaadin.com/directory/component/filteringtable).
+
+The project uses code from [Vaadin-on-Kotlin](http://vaadinonkotlin.eu). The Kotlin stdlib is
+only included as a run-time dependency - this project contains no Kotlin code and doesn't even
+run the Kotlin compiler.
 
 
 Workflow
