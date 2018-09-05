@@ -27,7 +27,7 @@ public class Bootstrap implements ServletContextListener {
         VokOrm.INSTANCE.getDataSourceConfig().setJdbcUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
         VokOrm.INSTANCE.getDataSourceConfig().setUsername("sa");
         VokOrm.INSTANCE.getDataSourceConfig().setPassword("");
-        VaadinOnKotlin.INSTANCE.init();
+        VokOrm.INSTANCE.init();
 
         // create the 'Person' table
         final Flyway flyway = new Flyway();
@@ -53,6 +53,6 @@ public class Bootstrap implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        VaadinOnKotlin.INSTANCE.destroy();
+        VokOrm.INSTANCE.destroy();
     }
 }

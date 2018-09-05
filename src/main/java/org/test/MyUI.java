@@ -1,7 +1,5 @@
 package org.test;
 
-import javax.servlet.annotation.WebServlet;
-
 import com.github.vok.framework.DefaultFilterFieldFactory;
 import com.github.vok.framework.FilterRow;
 import com.github.vok.framework.sql2o.vaadin.SqlFilterFactory;
@@ -12,12 +10,10 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.shared.ui.ValueChangeMode;
-import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
+
+import javax.servlet.annotation.WebServlet;
 
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KClass;
