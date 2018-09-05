@@ -3,6 +3,7 @@ package org.test;
 import com.github.vok.framework.VaadinOnKotlin;
 import com.github.vokorm.VokOrm;
 
+import org.flywaydb.core.Flyway;
 import org.h2.Driver;
 
 import javax.servlet.ServletContextEvent;
@@ -23,6 +24,11 @@ public class Bootstrap implements ServletContextListener {
         VokOrm.INSTANCE.getDataSourceConfig().setUsername("sa");
         VokOrm.INSTANCE.getDataSourceConfig().setPassword("");
         VaadinOnKotlin.INSTANCE.init();
+
+        // create the 'Person' table
+        final Flyway flyway = new Flyway();
+        flyway.setDataSource(VokOrm.INSTANCE.getDataSource());
+        flyway.migrate();
     }
 
     @Override
