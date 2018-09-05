@@ -13,6 +13,7 @@ The project uses code from [Vaadin-on-Kotlin](http://vaadinonkotlin.eu). The Kot
 only included as a run-time dependency - this project contains no Kotlin code and doesn't even
 run the Kotlin compiler.
 
+The live demo of this project [runs on Heroku](https://vaadin8-sqldataprovider.herokuapp.com/).
 
 Workflow
 ========
@@ -20,6 +21,10 @@ Workflow
 To compile the entire project, run "mvn install".
 
 To run the application, run "mvn jetty:run" and open http://localhost:8080/ .
+
+> Jetty is a bit broken - at first it will show you a list of contexts which would indicate that the
+  app has not been deployed properly. Just refresh the page a couple of times - Jetty will eventually
+  be able to pick up the app and open it properly.
 
 To produce a deployable production mode WAR:
 - change productionMode to true in the servlet class configuration (nested in the UI class)
