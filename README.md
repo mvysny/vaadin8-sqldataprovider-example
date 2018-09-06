@@ -15,6 +15,11 @@ run the Kotlin compiler.
 
 The live demo of this project [runs on Heroku](https://vaadin8-sqldataprovider.herokuapp.com/).
 
+You can read more about the SQLDataProvider in the [Vaadin-on-Kotlin Databases Guide](http://www.vaadinonkotlin.eu/databases.html).
+In short, SQLDataProvider uses [Sql2o](https://www.sql2o.org/) to map JDBC rows to Java objects.
+The mapping directly maps column name to a bean property name; to modify the mapping just
+alias the columns in your SELECT command.
+
 Workflow
 ========
 
