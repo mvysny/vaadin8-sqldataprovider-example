@@ -1,6 +1,5 @@
 package org.test;
 
-import com.github.vok.framework.VaadinOnKotlin;
 import com.github.vokorm.DBKt;
 import com.github.vokorm.VokOrm;
 
@@ -15,6 +14,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 /**
+ * Bootstraps the VokOrm so that the SQLDataProvider has access to the database.
  * @author mavi
  */
 @WebListener
