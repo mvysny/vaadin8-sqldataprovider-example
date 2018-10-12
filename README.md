@@ -23,9 +23,9 @@ alias the columns in your SELECT command.
 Workflow
 ========
 
-To compile the entire project, run "mvn install".
+To compile the entire project, run `./mvnw clean package` (or on Windows: `./mvnw.cmd clean package`).
 
-To run the application, run "mvn jetty:run" and open http://localhost:8080/ .
+To run the application, run `./mvnw jetty:run` and open http://localhost:8080/ .
 
 > Jetty is a bit broken - at first it will show you a list of contexts which would indicate that the
   app has not been deployed properly. Just refresh the page a couple of times - Jetty will eventually
