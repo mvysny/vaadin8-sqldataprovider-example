@@ -1,7 +1,8 @@
+[![Built in Vaadin on Kotlin](http://vaadinonkotlin.eu/images/built_in_vok_badge_small.png)](http://vaadinonkotlin.eu)
+[![Build Status](https://travis-ci.org/mvysny/vaadin8-sqldataprovider-example.svg?branch=master)](https://travis-ci.org/mvysny/vaadin8-sqldataprovider-example)
+
 Vaadin 8 SQLDataProvider Example
 =================================
-
-[![Build Status](https://travis-ci.org/mvysny/vaadin8-sqldataprovider-example.svg?branch=master)](https://travis-ci.org/mvysny/vaadin8-sqldataprovider-example)
 
 Demonstrates the use of a full-blown SQLDataProvider in a Vaadin 8 Grid.
 
@@ -23,9 +24,9 @@ alias the columns in your SELECT command.
 Workflow
 ========
 
-To compile the entire project, run `./mvnw clean package` (or on Windows: `./mvnw.cmd clean package`).
+To compile the entire project, run `./mvnw -C clean package` (or on Windows: `./mvnw.cmd -C clean package`).
 
-To run the application, run `./mvnw jetty:run` and open http://localhost:8080/ .
+To run the application, run `./mvnw -C jetty:run` and open http://localhost:8080/ .
 
 > Jetty is a bit broken - at first it will show you a list of contexts which would indicate that the
   app has not been deployed properly. Just refresh the page a couple of times - Jetty will eventually
