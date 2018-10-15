@@ -38,7 +38,7 @@ public class MyUI extends UI {
         final FilterRow<Person, Filter<Person>> filterRow = VaadinFiltersKt.generateFilterComponents(grid.appendHeaderRow(),
                 grid,
                 kclass,
-                new DefaultFilterFieldFactory<>(new SqlFilterFactory<>()),
+                new DefaultFilterFieldFactory<>(new SqlFilterFactory<>(Person.class)),
                 ValueChangeMode.EAGER
         );
         setContent(grid);
