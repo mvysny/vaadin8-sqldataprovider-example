@@ -1,14 +1,16 @@
 package org.test;
 
-import com.github.karibu.testing.GridKt;
-import com.github.karibu.testing.LocatorKt;
 import com.github.karibu.testing.MockVaadin;
 import com.vaadin.ui.Grid;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static com.github.karibu.testing.GridKt.*;
+import static com.github.karibu.testing.LocatorJ.*;
 
 /**
  * Look Ma, no Spring/JavaEE/Servlet container necessary! That's what you get when you keep things simple.
@@ -30,9 +32,14 @@ public class MyUITest {
         MockVaadin.setup(MyUI::new);
     }
 
+    @AfterEach
+    public void tearDown() {
+        MockVaadin.tearDown();
+    }
+
     @Test
     public void testGridHas100Rows() {
-        final Grid grid = LocatorKt._get(Grid.class, gridSearchSpec -> null);
-        GridKt.expectRows(grid, 100);
+        final Grid grid = _get(Grid.class);
+        expectRows(grid, 100);
     }
 }
