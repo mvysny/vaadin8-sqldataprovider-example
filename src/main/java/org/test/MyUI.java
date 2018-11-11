@@ -1,9 +1,5 @@
 package org.test;
 
-import com.github.vok.framework.DefaultFilterFieldFactory;
-import com.github.vok.framework.FilterRow;
-import com.github.vok.framework.sql2o.vaadin.SqlFilterFactory;
-import com.github.vok.framework.sql2o.vaadin.VaadinFiltersKt;
 import com.github.vokorm.Filter;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -15,6 +11,10 @@ import com.vaadin.ui.UI;
 
 import javax.servlet.annotation.WebServlet;
 
+import eu.vaadinonkotlin.vaadin8.DefaultFilterFieldFactory;
+import eu.vaadinonkotlin.vaadin8.FilterRow;
+import eu.vaadinonkotlin.vaadin8.sql2o.SqlFilterFactory;
+import eu.vaadinonkotlin.vaadin8.sql2o.VaadinFiltersKt;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KClass;
 

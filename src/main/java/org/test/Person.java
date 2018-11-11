@@ -1,9 +1,9 @@
 package org.test;
 
-import com.github.vok.framework.sql2o.vaadin.DataProvidersKt;
 import com.github.vokorm.Filter;
 import com.vaadin.data.provider.ConfigurableFilterDataProvider;
 
+import eu.vaadinonkotlin.vaadin8.sql2o.DataProvidersKt;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
