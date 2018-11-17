@@ -1,6 +1,6 @@
 package org.test;
 
-import com.github.vokorm.Filter;
+import com.github.mvysny.vokdataloader.Filter;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -11,10 +11,10 @@ import com.vaadin.ui.UI;
 
 import javax.servlet.annotation.WebServlet;
 
+import eu.vaadinonkotlin.vaadin8.DataLoaderFilterFactory;
+import eu.vaadinonkotlin.vaadin8.DataLoaderFilterFactoryKt;
 import eu.vaadinonkotlin.vaadin8.DefaultFilterFieldFactory;
 import eu.vaadinonkotlin.vaadin8.FilterRow;
-import eu.vaadinonkotlin.vaadin8.sql2o.SqlFilterFactory;
-import eu.vaadinonkotlin.vaadin8.sql2o.VaadinFiltersKt;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KClass;
 
@@ -35,10 +35,10 @@ public class MyUI extends UI {
         grid.setDataProvider(Person.createDataProvider());
 
         final KClass<Person> kclass = (KClass<Person>) Reflection.getOrCreateKotlinClass(Person.class);
-        final FilterRow<Person, Filter<Person>> filterRow = VaadinFiltersKt.generateFilterComponents(grid.appendHeaderRow(),
+        final FilterRow<Person, Filter<Person>> filterRow = DataLoaderFilterFactoryKt.generateFilterComponents(grid.appendHeaderRow(),
                 grid,
                 kclass,
-                new DefaultFilterFieldFactory<>(new SqlFilterFactory<>(Person.class)),
+                new DefaultFilterFieldFactory<>(new DataLoaderFilterFactory<>(Person.class)),
                 ValueChangeMode.EAGER
         );
         setContent(grid);

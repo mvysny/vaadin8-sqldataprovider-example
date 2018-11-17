@@ -1,8 +1,7 @@
 package org.test;
 
-import com.github.vokorm.Filter;
+import com.github.mvysny.vokdataloader.Filter;
 import com.vaadin.data.provider.ConfigurableFilterDataProvider;
-
 import eu.vaadinonkotlin.vaadin8.sql2o.DataProvidersKt;
 import org.jetbrains.annotations.NotNull;
 
