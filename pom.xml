@@ -14,7 +14,7 @@
 	</prerequisites>
 
 	<properties>
-		<vaadin.version>8.6.1</vaadin.version>
+		<vaadin.version>8.8.6</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -62,7 +62,7 @@
 		<dependency>
 			<groupId>eu.vaadinonkotlin</groupId>
 			<artifactId>vok-framework-sql2o</artifactId>
-			<version>0.7.0</version>
+			<version>0.7.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
-			<version>5.2.0</version>
+			<version>5.2.4</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -96,7 +96,7 @@
 		<dependency>
 			<groupId>com.github.mvysny.kaributesting</groupId>
 			<artifactId>karibu-testing-v8</artifactId>
-			<version>1.1.2</version>
+			<version>1.1.9</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -171,7 +171,7 @@
 								<artifactItem>
 									<groupId>com.github.jsimone</groupId>
 									<artifactId>webapp-runner</artifactId>
-									<version>9.0.11.0</version>
+									<version>9.0.24.0</version>
 									<destFileName>webapp-runner.jar</destFileName>
 								</artifactItem>
 							</artifactItems>
