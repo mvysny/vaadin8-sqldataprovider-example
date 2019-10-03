@@ -75,9 +75,15 @@
 			<version>5.2.4</version>
 		</dependency>
 		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.28</version>
+		</dependency>
+		<!-- this will allow us to configure Vaadin to log to SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>1.7.28</version>
 		</dependency>
 
 		<!-- Browserless Testing, see https://github.com/mvysny/karibu-testing -->

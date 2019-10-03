@@ -17,6 +17,7 @@ import eu.vaadinonkotlin.vaadin8.DefaultFilterFieldFactory;
 import eu.vaadinonkotlin.vaadin8.FilterRow;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KClass;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -47,5 +48,10 @@ public class MyUI extends UI {
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
+        static {
+            // Vaadin logs into java.util.logging. Redirect that, so that all logging goes through slf4j.
+            SLF4JBridgeHandler.removeHandlersForRootLogger();
+            SLF4JBridgeHandler.install();
+        }
     }
 }
