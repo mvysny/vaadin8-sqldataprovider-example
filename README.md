@@ -17,9 +17,9 @@ run the Kotlin compiler.
 The [live demo](https://vaadin8-sqldataprovider.herokuapp.com/) of this app runs on Heroku.
 
 You can read more about the SQLDataProvider in the [Vaadin-on-Kotlin Databases Guide](http://www.vaadinonkotlin.eu/databases.html).
-In short, SQLDataProvider uses [Sql2o](https://www.sql2o.org/) to map JDBC ResultSet rows to Java objects.
+In short, SQLDataProvider uses [vok-orm](https://github.com/mvysny/vok-orm) to map JDBC ResultSet rows to Java objects.
 The mapping directly maps column name to a bean property name; to modify the mapping just
-alias the columns in your SELECT command.
+use the `@As` annotation on your entity fields.
 
 Workflow
 ========
@@ -48,6 +48,9 @@ package "client".
 Debugging client side code
   - run "mvn vaadin:run-codeserver" on a separate console while the application is running
   - activate Super Dev Mode in the debug window of the application
+
+Please read [Debugging Your Widgetset Components With SuperDevMode For Dummies](https://mvysny.github.io/Debugging-your-widgetset-components-with-superdevmode-for-dummies/)
+for more info.
 
 Developing a theme using the runtime compiler
 -------------------------
