@@ -14,14 +14,15 @@
 	</prerequisites>
 
 	<properties>
-		<vaadin.version>8.9.0</vaadin.version>
+		<vaadin.version>8.10.1</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<!-- If there are no local customizations, this can also be "fetch" or "cdn" -->
 		<vaadin.widgetset.mode>local</vaadin.widgetset.mode>
-		<junit.jupiter.version>5.3.0</junit.jupiter.version>
+		<junit.jupiter.version>5.6.0</junit.jupiter.version>
+		<slf4j.version>1.7.30</slf4j.version>
 	</properties>
 
 	<dependencyManagement>
@@ -61,29 +62,34 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.vaadinonkotlin</groupId>
-			<artifactId>vok-framework-sql2o</artifactId>
-			<version>0.7.1</version>
+			<artifactId>vok-framework-vokdb</artifactId>
+			<version>0.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>3.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.4.197</version>
+			<version>1.4.200</version>
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
-			<version>5.2.4</version>
+			<version>6.2.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.28</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 		<!-- this will allow us to configure Vaadin to log to SLF4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
-			<version>1.7.28</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<!-- Browserless Testing, see https://github.com/mvysny/karibu-testing -->
@@ -102,7 +108,7 @@
 		<dependency>
 			<groupId>com.github.mvysny.kaributesting</groupId>
 			<artifactId>karibu-testing-v8</artifactId>
-			<version>1.1.13</version>
+			<version>1.2.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

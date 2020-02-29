@@ -33,14 +33,15 @@ public class MyUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
         final Grid<Person> grid = new Grid<>(Person.class);
         grid.setSizeFull();
-        grid.setDataProvider(Person.createDataProvider());
+        grid.setDataProvider(Person.dao.createSqlDataProvider());
 
         final KClass<Person> kclass = (KClass<Person>) Reflection.getOrCreateKotlinClass(Person.class);
         final FilterRow<Person, Filter<Person>> filterRow = DataLoaderFilterFactoryKt.generateFilterComponents(grid.appendHeaderRow(),
                 grid,
                 kclass,
                 new DefaultFilterFieldFactory<>(new DataLoaderFilterFactory<>(Person.class)),
-                ValueChangeMode.EAGER
+                ValueChangeMode.EAGER,
+                (hasValue, personPropertyDefinition) -> null
         );
         setContent(grid);
     }
